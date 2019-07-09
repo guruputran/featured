@@ -1,0 +1,19 @@
+<h1>Editing Post</h1>
+<%= render 'form', post: @post %>
+
+       <% if @post.images.attached? %>
+<% for image in @post.images.where(:fpic => 1) do %>
+<%= image_tag(image, :class => "feats") %>
+<%= link_to 'X', make_image_featured_post_path(:img_id => image.id),
+:method => 'get' %>
+ <% end %>
+<% for image in @post.images.where(:fpic => 0) do %>
+<%= image_tag(image, :class => "postshow") %>
+<%= link_to 'X', make_image_featured_post_path(:img_id => image.id),
+:method => 'get' %>
+ <% end %>
+<% end %>
+
+<%= link_to 'Show', @post %> |
+<%= link_to 'Reset Featured', reset_featured_post_path %> |
+<%= link_to 'Back', posts_path %>
