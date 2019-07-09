@@ -1,4 +1,4 @@
-<h1>Editing Post</h1>
+<h3>Editing Post</h3>
 <%= render 'form', post: @post %>
 
        <% if @post.images.attached? %>
@@ -9,7 +9,7 @@
  <% end %>
 <% for image in @post.images.where(:fpic => 0) do %>
 <%= image_tag(image, :class => "postshow") %>
-<%= link_to 'X', make_image_featured_post_path(:img_id => image.id),
+<%= link_to "X", make_image_featured_post_path(:img_id => image.id),
 :method => 'get' %>
  <% end %>
 <% end %>

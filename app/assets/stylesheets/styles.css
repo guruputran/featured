@@ -1,11 +1,14 @@
+.feats {
+max-width: 100%;
+height: 300px;
+padding: 5px;
+}
+
 .postshow {
 max-width: 100%;
 height: 200px;
 padding: 5px;
 }
-
-.feats {
-max-width: 100%;
-height: 300px;
-padding: 5px;
+.caption h4,h5 {
+	color: red;
 }

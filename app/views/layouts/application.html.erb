@@ -6,10 +6,110 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    
   </head>
 
   <body>
+      <div class="navbar-fixed">
+      <nav class="teal">
+        <div class="container">
+          <div class="nav-wrapper">
+            <a href="#" class="brand-logo">Postblog</a>
+            <a href="#" data-target="mobile-nav" class="sidenav-trigger">
+              <i class="material-icons">menu</i>
+            </a>
+            <ul class="right hide-on-med-and-down">
+              <li>
+                <a href="#home">Home</a>
+              </li>
+              <li>
+                <a href="#search">Search</a>
+              </li>
+              <li>
+                <a href="#popular">Popular Posts</a>
+              </li>
+               <li>
+                <a href="#gallery">Gallery</a>
+              </li>
+              <li>
+                <a href="#contact">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+            <ul class="sidenav" id="mobile-nav">
+              <li>
+                <a href="#home">Home</a>
+              </li>
+              <li>
+                <a href="#search">Search</a>
+              </li>
+              <li>
+                <a href="#popular">Popular Posts</a>
+              </li>
+               <li>
+                <a href="#gallery">Gallery</a>
+              </li>
+              <li>
+                <a href="#contact">Contact</a>
+              </li>
+            </ul>
+
+<!-- Section Slider -->
+<section class="slider">
+  <ul class="slides">
+      <li>
+         <%= image_tag('pics/plans.jpg', alt: 'Student Image')%> 
+          <!-- random image -->
+        <div class="caption center-align">
+          <h4>This is an awesome post blog!</h4>
+          <h5>I like it so much...</h5>
+        </div>
+      </li>
+      <li>
+       <%= image_tag('pics/student.jpg', alt: 'Student Image')%> 
+        <!-- random image -->
+        <div class="caption left-align">
+          <h4>One of the best apps!</h4>
+          <h5>Its a mini website</h5>
+        </div>
+      </li>
+      <li>
+        <%= image_tag('pics/webdesign.jpg', alt: 'Student Image')%> 
+         <!-- random image -->
+        <div class="caption right-align">
+          <h4>Become friends by posting!</h4>
+          <h5>Great friendships develops here.</h5>
+        </div>
+      </li>
+      
+    </ul>
+</section>
+    <div class="container">
     <%= yield %>
+  </div>
+
+<script>
+  //sidenav
+const sideNav = document.querySelector('.sidenav');
+M.Sidenav.init(sideNav, {});
+
+//slider
+const slider = document.querySelector('.slider');
+M.Slider.init(slider, {
+  indicators: false,
+  height: 500,
+  transition: 500,
+  interval: 6000
+  });
+
+</script>
+
   </body>
 </html>
